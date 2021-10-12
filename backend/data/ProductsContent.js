@@ -73,4 +73,4 @@ const productsContent = [
     },
 ]
 
-export default productsContent
+module.exports = productsContent

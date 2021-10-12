@@ -1,12 +1,16 @@
 import React from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
 
 const Navbarr = () => {
     return (
         <>
             <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
                 <Container>
-                    <Navbar.Brand href="/">Sell&Buy</Navbar.Brand>
+                    <LinkContainer to="/">
+                        <Navbar.Brand>Sell&Buy</Navbar.Brand>
+                    </LinkContainer>
+
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav 
@@ -14,9 +18,13 @@ const Navbarr = () => {
                             style={{ maxHeight: '100px', marginLeft: 'auto' }}
                             navbarScroll
                         >
-                            <Nav.Link href="/"><i className="fas fa-shopping-cart"></i> CART</Nav.Link>
-                            <Nav.Link href="/login"><i className="fas fa-user"></i> Sign In</Nav.Link>
-                    
+                            <LinkContainer to="/cart">
+                                <Nav.Link><i className="fas fa-shopping-cart"></i> CART</Nav.Link>
+                            </LinkContainer>
+
+                            <LinkContainer to="/login">
+                                <Nav.Link><i className="fas fa-user"></i> Sign In</Nav.Link>
+                            </LinkContainer>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
