@@ -4,11 +4,18 @@
   "description": "MERN shopping app",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js"
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix buyandsell",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Mono Ranjan Das",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.3.0",
+    "nodemon": "^2.0.13"
   }
 }
